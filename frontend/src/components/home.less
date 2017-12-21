@@ -1,0 +1,39 @@
+@import '../theme.less';
+
+.hgm-home {
+  width: 100%;
+  height: calc(100vh);
+
+  .header {
+    display: flex;
+
+    .logo {
+      flex: 1;
+      color: @hgm-text-color-light;
+
+      .text {
+        padding-left: @padding-xs;
+      }
+    }
+
+    .login {
+      color: @hgm-text-color-light;
+    }
+  }
+
+  .content {
+    display: flex;
+    overflow: auto;
+    background-color: @body-background;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    border-top: 1px solid @border-color-base;
+  }
+  
+}
