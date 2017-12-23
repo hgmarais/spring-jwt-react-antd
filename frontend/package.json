@@ -11,14 +11,15 @@
     "clean": "rd /s/q built",
     "publish": "tsc && webpack --progress --config webpack.prod.config.js"
   },
-  "author": "Chun Liu",
+  "author": "Henk Marais",
   "license": "GPL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chunliu/typescript-react-hot-reload"
+    "url": "https://github.com/hgmarais/spring-jwt-react-antd"
   },
   "dependencies": {
     "antd": "^3.0.0",
+    "connected-react-router": "^4.2.3",
     "react": "^16.0.0",
     "react-data-grid": "^2.0.66",
     "react-dom": "^16.0.0",
@@ -28,8 +29,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "connected-react-router": "^4.2.3"
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.1",
@@ -47,7 +47,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-import": "^1.6.2",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.0",

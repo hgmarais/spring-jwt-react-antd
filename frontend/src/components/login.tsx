@@ -127,8 +127,6 @@ export interface PropFunctions {
 
   login(username: string, password: string): void;
 
-  signup(username: string, password: string): void;
-
 }
 
 export interface Props extends PropFields, PropFunctions {

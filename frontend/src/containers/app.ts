@@ -2,7 +2,6 @@ import { connect, Dispatch } from 'react-redux';
 import { App, PropFields, PropFunctions } from '../components/app';
 import { StoreState } from '../model';
 import * as Actions from '../actions';
-import * as API from '../api';
 
 function mapStateToProps(state: StoreState): PropFields {
   return {
@@ -13,7 +12,7 @@ function mapStateToProps(state: StoreState): PropFields {
 
 function mapDispatchToProps(dispatch: Dispatch<Actions.Action>): PropFunctions {
   return {
-    logout: () => dispatch(API.logout()),
+    logout: () => dispatch(Actions.logout())
   };
 }
 

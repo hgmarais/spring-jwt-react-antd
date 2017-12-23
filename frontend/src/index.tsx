@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter, connectRouter, routerMiddleware, RouterState } from 'connected-react-router';
@@ -9,6 +9,7 @@ import { StoreState } from './model';
 import history from './utils/history';
 import App from './containers/app';
 import { AsyncValueState } from './utils';
+import rootSaga from './sagas/root-saga';
 import './index.less';
 
 const defaultRouterState: RouterState = {
@@ -32,10 +33,12 @@ const defaultStoreState: StoreState = {
   }
 };
 
+const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore<StoreState>(
   connectRouter(history)(rootReducer),
   defaultStoreState,
-  applyMiddleware(routerMiddleware(history), thunk)
+  applyMiddleware(routerMiddleware(history), sagaMiddleware)
 );
 
 ReactDOM.render(
@@ -47,7 +50,6 @@ ReactDOM.render(
   document.getElementById('root') as HTMLElement
 );
 
-console.log('index.store');
-console.log(store);
+sagaMiddleware.run(rootSaga);
 
 export { store };
